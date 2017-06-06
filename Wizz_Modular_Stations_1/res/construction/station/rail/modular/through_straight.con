@@ -16,7 +16,7 @@ function data ()
 		soundConfig = {
 			soundSet = { name = "station_passenger_new" }
 		},
-		params = paramsutil.makeTrainStationParams(stationConfig, platformConfig),
+		params = modularStationUtil.makeTrainStationParams(stationConfig, platformConfig),
 		
 		updateFn = function(params) 
 			return constructionutil.makeTrainStationNew(railstationconfigutil.makeTrainStationConfig(params, stationConfig, stationBuilding, platformConfig))
