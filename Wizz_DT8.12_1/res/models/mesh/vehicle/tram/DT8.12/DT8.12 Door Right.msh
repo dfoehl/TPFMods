@@ -1,0 +1,79 @@
+function data()
+return {
+	animations = {
+		open_door = {
+			params = {
+				keyframes = {
+					{
+						time = 0,
+						rot = {0,0,0},
+						transl = {0,0,0},
+					}, {
+						time = 250,
+						rot = {0,0,0},
+						transl = {0,0,-0.05},
+					}, {
+						time = 1000,
+						rot = {0,0,0},
+						transl = {0.6,0,-0.05},
+					},
+				},
+				origin = { 0, 0, 0, },
+			},
+			type = "KEYFRAME",
+		},
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 240,
+					offset = 0,
+				},
+				position = {
+					count = 240,
+					offset = 240,
+				},
+				tangent = {
+					count = 240,
+					offset = 480,
+				},
+				uv0 = {
+					count = 240,
+					offset = 720,
+				},
+			},
+			materials = {
+				"/vehicle/tram/DT8.12_Exterior.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 720,
+			numComp = 3,
+			offset = 960,
+		},
+		position = {
+			count = 168,
+			numComp = 3,
+			offset = 1680,
+		},
+		tangent = {
+			count = 320,
+			numComp = 4,
+			offset = 1848,
+		},
+		uv0 = {
+			count = 480,
+			numComp = 2,
+			offset = 2168,
+		},
+	},
+}
+end

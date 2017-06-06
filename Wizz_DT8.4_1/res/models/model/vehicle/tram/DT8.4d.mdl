@@ -1,0 +1,658 @@
+local vec3 = require "vec3"
+local transf = require "transf"
+function data()
+local fakeBogieStart = 237
+
+return {
+	boundingInfo = {
+		bbMax = {
+			0, 1.33, 3, 
+		},
+		bbMin = {
+			-77.32, -1.33, 0, 
+		},		
+	},
+	collider = {
+		params = {
+			
+		},
+		type = "MESH",
+		
+	},
+	lods = {
+		{
+			animations = {
+				
+			},
+			children = {
+				{
+					id = "vehicle/tram/DT8.4/DT8.4a.grp",
+					transf = {
+						1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -19.33, 0, 0, 1, 
+					},
+					type = "GROUP",
+				},{
+					id = "vehicle/tram/DT8.4/DT8.4b.grp",
+					transf = {
+						-1, 0, 0, 0, -0, -1, 0, 0, 0, 0, 1, 0, -19.33, 0, 0, 1, 
+					},
+					type = "GROUP",
+				},
+				{
+					id = "vehicle/tram/DT8.4/DT8.4a.grp",
+					transf = {
+						1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -57.99, 0, 0, 1, 
+					},
+					type = "GROUP",
+				},{
+					id = "vehicle/tram/DT8.4/DT8.4b.grp",
+					transf = {
+						-1, 0, 0, 0, -0, -1, 0, 0, 0, 0, 1, 0, -57.99, 0, 0, 1, 
+					},
+					type = "GROUP",
+				},
+			},
+			events = {
+				open_all_doors = {
+					[1] = {
+						forward = true,
+						name = "open_doors_right",
+					},
+					[2] = {
+						forward = true,
+						name = "open_doors_left",
+					},
+					[3] = {
+						forward = true,
+						name = "open_doors_right",
+					},
+					[4] = {
+						forward = true,
+						name = "open_doors_left",
+					},
+				},
+				close_all_doors = {
+					[1] = {
+						forward = false,
+						name = "open_doors_right",
+					},
+					[2] = {
+						forward = false,
+						name = "open_doors_left",
+					},
+					[3] = {
+						forward = false,
+						name = "open_doors_right",
+					},
+					[4] = {
+						forward = false,
+						name = "open_doors_left",
+					},
+				}, open_doors_left = {
+					[1] = {
+						forward = true,
+						name = "open_doors_right",
+					},
+					[2] = {
+						forward = true,
+						name = "open_doors_left",
+					},
+					[3] = {
+						forward = true,
+						name = "open_doors_right",
+					},
+					[4] = {
+						forward = true,
+						name = "open_doors_left",
+					},
+				}, close_doors_left = {
+					[1] = {
+						forward = false,
+						name = "close_doors_left",
+					},
+					[2] = {
+						forward = false,
+						name = "close_doors_right",
+					},
+					[3] = {
+						forward = false,
+						name = "close_doors_left",
+					},
+					[4] = {
+						forward = false,
+						name = "close_doors_right",
+					},
+				}, open_doors_right = {
+					[1] = {
+						forward = true,
+						name = "open_doors_right",
+					},
+					[2] = {
+						forward = true,
+						name = "open_doors_left",
+					},
+					[3] = {
+						forward = true,
+						name = "open_doors_right",
+					},
+					[4] = {
+						forward = true,
+						name = "open_doors_left",
+					},
+				}, close_doors_right = {
+					[1] = {
+						forward = false,
+						name = "close_doors_right",
+					},
+					[2] = {
+						forward = false,
+						name = "close_doors_left",
+					},
+					[3] = {
+						forward = false,
+						name = "close_doors_right",
+					},
+					[4] = {
+						forward = false,
+						name = "close_doors_left",
+					},
+				},	
+				
+			},
+			matConfigs = {
+				{
+					0, 0, 0, 0, 0, 0, 0, 0, 0, 
+				}, 
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 2510,
+			
+		}, 
+	},
+	metadata = {
+		description = {
+			name = _(wizzDT84.Double),
+			description = _(wizzDT84.DoubleDescription)
+		},
+		availability = {
+			yearFrom = 1985,
+			yearTo = 1999,
+			
+		},
+		cost = {
+			price = 2730000*2,
+			
+		},
+		maintenance = {
+			lifespan = 40,
+			runningCosts = -1,
+			
+		},
+		railVehicle = {
+			configs = {
+				{
+					axles = {
+						"vehicle/tram/DT8.4/Axle.msh", 
+					},
+					fakeBogies = { },
+				}, 
+			},
+			engines = {
+				{
+					power = 1776,
+					tractiveEffort = 106,
+					type = "ELECTRIC",
+					
+				}, 
+			},
+			soundSet = {
+				horn = "",
+				name = "tram_modern",
+				
+			},
+			topSpeed = 80,
+			weight = 106,
+			
+		},
+		transportVehicle = {
+			capacities = {
+				{
+					capacity = 498,
+					type = "PASSENGERS",
+					
+				}, 
+			},
+			carrier = "TRAM",
+			loadSpeed = 8,
+			
+			seats = {					
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(17.81, 0, 1)), crew = true, standing = false},
+				-- front 
+				
+				-- A-Wagon 1 seats
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, 0.42375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.05, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.52375, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, 0.89125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, -1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.79125, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.89125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -1.09125, 1)),standing = false },
+				-- { group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.79125, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.89125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.79125, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.89125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.79125, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.89125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.79125, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.89125, 1)),standing = false },
+				-- { group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.79125, 1)),standing = false },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.89125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 0.52375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 1.09125, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.32375, 1)),standing = false },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.79125, 1)),standing = false },
+				
+				-- A-Wagon 1 standing
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(1.3, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(1.9, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(2.4, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(3.0, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(3.7, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(4.3, 0, 1)),standing = true },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(5.0, 0.7, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(5.5, 0.3, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(6.1, 0.8, 1)),standing = true },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(7.5, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(8.1, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(8.7, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(9.3, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(9.9, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(10.5, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(11.1, 0, 1)),standing = true },				
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(12.0, 0.8, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(12.4, 0.3, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(13.1, 0.7, 1)),standing = true },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(14.0, 0.8, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(14.4, 0.3, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(14.6, 0.7, 1)),standing = true },				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(13.9, -0.7, 1)),standing = true },
+				
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(13.8, -0.3, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(13.6, 0.2, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(14.1, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(14.9, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(15.2, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(15.6, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(16.0, 0, 1)),standing = true },
+				{ group = 1, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(16.7, 0, 1)),standing = true },
+				
+				-- B-Wagon 1 seats
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, 0.42375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.05, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.52375, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, 0.89125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, -1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.79125, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.89125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -1.09125, 1)),standing = false },
+				-- { group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.79125, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.89125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.79125, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.89125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.79125, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.89125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.79125, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.89125, 1)),standing = false },
+				-- { group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.79125, 1)),standing = false },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.89125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 0.52375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 1.09125, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.32375, 1)),standing = false },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.79125, 1)),standing = false },
+				
+				-- B-Wagon 1 standing
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(1.3, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(1.9, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(2.4, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(3.0, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(3.7, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(4.3, 0, 1)),standing = true },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(5.0, 0.7, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(5.5, 0.3, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(6.1, 0.8, 1)),standing = true },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(7.5, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(8.1, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(8.7, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(9.3, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(9.9, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(10.5, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(11.1, 0, 1)),standing = true },				
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(12.0, 0.8, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(12.4, 0.3, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(13.1, 0.7, 1)),standing = true },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(14.0, 0.8, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(14.4, 0.3, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(14.6, 0.7, 1)),standing = true },				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(13.9, -0.7, 1)),standing = true },
+				
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(13.8, -0.3, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(13.6, 0.2, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(14.1, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(14.9, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(15.2, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(15.6, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(16.0, 0, 1)),standing = true },
+				{ group = 92, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(16.7, 0, 1)),standing = true },	
+				
+				-- A-Wagon 2 seats
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, 0.42375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.05, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.52375, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, 0.89125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, -1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.79125, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.89125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -1.09125, 1)),standing = false },
+				-- { group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.79125, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.89125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.79125, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.89125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.79125, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.89125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.79125, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.89125, 1)),standing = false },
+				-- { group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.79125, 1)),standing = false },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.89125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 0.52375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 1.09125, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.32375, 1)),standing = false },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.79125, 1)),standing = false },
+				
+				-- A-Wagon 2 standing
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(1.3, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(1.9, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(2.4, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(3.0, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(3.7, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(4.3, 0, 1)),standing = true },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(5.0, 0.7, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(5.5, 0.3, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(6.1, 0.8, 1)),standing = true },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(7.5, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(8.1, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(8.7, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(9.3, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(9.9, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(10.5, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(11.1, 0, 1)),standing = true },				
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(12.0, 0.8, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(12.4, 0.3, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(13.1, 0.7, 1)),standing = true },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(14.0, 0.8, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(14.4, 0.3, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(14.6, 0.7, 1)),standing = true },				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(13.9, -0.7, 1)),standing = true },
+				
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(13.8, -0.3, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(13.6, 0.2, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(14.1, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(14.9, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(15.2, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(15.6, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(16.0, 0, 1)),standing = true },
+				{ group = 183, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(16.7, 0, 1)),standing = true },
+				
+				-- B-Wagon 2 seats
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, 0.42375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.05, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(0.8, -0.52375, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, 0.89125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(1.3, -1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(2.585, -0.79125, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, 0.89125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(2.985, -1.09125, 1)),standing = false },
+				-- { group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(4.27, -0.79125, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, 0.89125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8625, -1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(8.1475, -0.79125, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, 0.89125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(8.5475, -1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(9.8325, -0.79125, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, 0.89125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(10.2325, -1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(11.5175, -0.79125, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, 0.89125, 1)),standing = false },
+				-- { group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -0.52375, 1)),standing = false }, Single Seat only!
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(14.23, -1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(15.515, -0.79125, 1)),standing = false },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, 0.89125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(15.915, -1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 0.52375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, 1.09125, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.32375, 1)),standing = false },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180.0, 0.0, 0.0), vec3.new(17.2, -0.79125, 1)),standing = false },
+				
+				-- B-Wagon 2 standing
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(1.3, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(1.9, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(2.4, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(3.0, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(3.7, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(4.3, 0, 1)),standing = true },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(5.0, 0.7, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(5.5, 0.3, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(6.1, 0.8, 1)),standing = true },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(6.8, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(7.5, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(8.1, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(8.7, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(9.3, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(9.9, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(10.5, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(11.1, 0, 1)),standing = true },				
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(12.0, 0.8, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(12.4, 0.3, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(13.1, 0.7, 1)),standing = true },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(14.0, 0.8, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-85, 0.0, 0.0), vec3.new(14.4, 0.3, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-90, 0.0, 0.0), vec3.new(14.6, 0.7, 1)),standing = true },				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(-95, 0.0, 0.0), vec3.new(13.9, -0.7, 1)),standing = true },
+				
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(0.0, 0.0, 0.0), vec3.new(13.8, -0.3, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(45, 0.0, 0.0), vec3.new(13.6, 0.2, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(20, 0.0, 0.0), vec3.new(14.1, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(180, 0.0, 0.0), vec3.new(14.9, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(110, 0.0, 0.0), vec3.new(15.2, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(80, 0.0, 0.0), vec3.new(15.6, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(50, 0.0, 0.0), vec3.new(16.0, 0, 1)),standing = true },
+				{ group = 274, transf = transf.rotZYXTransl(transf.degToRad(30, 0.0, 0.0), vec3.new(16.7, 0, 1)),standing = true },				
+			}
+		},
+		
+	},
+	
+}
+end

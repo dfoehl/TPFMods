@@ -1,0 +1,59 @@
+function data()
+return {
+	animations = {
+		--Animation Config goes here!
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 32712,
+					offset = 0,
+				},
+				position = {
+					count = 32712,
+					offset = 32712,
+				},
+				tangent = {
+					count = 32712,
+					offset = 65424,
+				},
+				uv0 = {
+					count = 32712,
+					offset = 98136,
+				},
+			},
+			materials = {
+				"STR_Fernsehturm.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 98136,
+			numComp = 3,
+			offset = 130848,
+		},
+		position = {
+			count = 18192,
+			numComp = 3,
+			offset = 228984,
+		},
+		tangent = {
+			count = 43616,
+			numComp = 4,
+			offset = 247176,
+		},
+		uv0 = {
+			count = 65424,
+			numComp = 2,
+			offset = 290792,
+		},
+	},
+}
+end

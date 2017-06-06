@@ -1,0 +1,78 @@
+function data()
+return {
+	animations = {
+		
+	},
+	children = {
+		{
+			id = "vehicle/tram/DT8.12/DT8.12 Door Right.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Door Left.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Door Right Inside.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Door Left Inside.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		},	
+	},
+	events = {
+		open_all_doors = {
+			[1] = {
+				forward = true,
+				name = "open_door",
+			},
+			[2] = {
+				forward = true,
+				name = "open_door",
+			},
+			[3] = {
+				forward = true,
+				name = "open_door",
+			},
+			[4] = {
+				forward = true,
+				name = "open_door",
+			},
+		},
+		close_all_doors = {
+			[1] = {
+				forward = false,
+				name = "open_door",
+			},
+			[2] = {
+				forward = false,
+				name = "open_door",
+			},
+			[3] = {
+				forward = false,
+				name = "open_door",
+			},
+			[4] = {
+				forward = false,
+				name = "open_door",
+			},
+		},		
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end

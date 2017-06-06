@@ -1,0 +1,26 @@
+local modularStationUtil = require("modularStationUtil")
+
+function data () 
+	
+	
+	return { 
+		type = "RAIL_STATION",
+		description = {
+			name = _("Modular train station"),
+			description = _("Modular train station for passengers.")
+		},
+		availability = {
+			yearFrom = 1990
+		},
+		order = 26343 * 10000 + 02 * 100 + 0,
+		soundConfig = {
+			soundSet = { name = "station_passenger_new" }
+		},
+		params = paramsutil.makeTrainStationParams(stationConfig, platformConfig),
+		
+		updateFn = function(params) 
+			return constructionutil.makeTrainStationNew(railstationconfigutil.makeTrainStationConfig(params, stationConfig, stationBuilding, platformConfig))
+		end
+	}
+
+end

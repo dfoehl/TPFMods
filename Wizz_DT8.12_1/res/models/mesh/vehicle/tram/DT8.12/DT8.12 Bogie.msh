@@ -1,0 +1,59 @@
+function data()
+return {
+	animations = {
+		--Animation Config goes here!
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 1104,
+					offset = 0,
+				},
+				position = {
+					count = 1104,
+					offset = 1104,
+				},
+				tangent = {
+					count = 1104,
+					offset = 2208,
+				},
+				uv0 = {
+					count = 1104,
+					offset = 3312,
+				},
+			},
+			materials = {
+				"/vehicle/tram/DT8.12_Bellow.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 3312,
+			numComp = 3,
+			offset = 4416,
+		},
+		position = {
+			count = 672,
+			numComp = 3,
+			offset = 7728,
+		},
+		tangent = {
+			count = 1472,
+			numComp = 4,
+			offset = 8400,
+		},
+		uv0 = {
+			count = 2208,
+			numComp = 2,
+			offset = 9872,
+		},
+	},
+}
+end

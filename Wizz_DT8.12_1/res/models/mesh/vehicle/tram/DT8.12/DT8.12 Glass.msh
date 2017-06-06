@@ -1,0 +1,59 @@
+function data()
+return {
+	animations = {
+		--Animation Config goes here!
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 1032,
+					offset = 0,
+				},
+				position = {
+					count = 1032,
+					offset = 1032,
+				},
+				tangent = {
+					count = 1032,
+					offset = 2064,
+				},
+				uv0 = {
+					count = 1032,
+					offset = 3096,
+				},
+			},
+			materials = {
+				"/vehicle/tram/DT8.12_Glass.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 3096,
+			numComp = 3,
+			offset = 4128,
+		},
+		position = {
+			count = 960,
+			numComp = 3,
+			offset = 7224,
+		},
+		tangent = {
+			count = 1376,
+			numComp = 4,
+			offset = 8184,
+		},
+		uv0 = {
+			count = 2064,
+			numComp = 2,
+			offset = 9560,
+		},
+	},
+}
+end

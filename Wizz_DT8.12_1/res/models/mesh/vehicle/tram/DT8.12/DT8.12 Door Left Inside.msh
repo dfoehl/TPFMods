@@ -1,0 +1,79 @@
+function data()
+return {
+	animations = {
+		open_door = {
+			params = {
+				keyframes = {
+					{
+						time = 0,
+						rot = {0,0,0},
+						transl = {0,0,0},
+					}, {
+						time = 250,
+						rot = {0,0,0},
+						transl = {0,0,-0.05},
+					}, {
+						time = 1000,
+						rot = {0,0,0},
+						transl = {-0.6,0,-0.05},
+					},
+				},
+				origin = { 0, 0, 0, },
+			},
+			type = "KEYFRAME",
+		},
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 60,
+					offset = 0,
+				},
+				position = {
+					count = 60,
+					offset = 60,
+				},
+				tangent = {
+					count = 60,
+					offset = 120,
+				},
+				uv0 = {
+					count = 60,
+					offset = 180,
+				},
+			},
+			materials = {
+				"/vehicle/tram/DT8.12_Bellow.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 180,
+			numComp = 3,
+			offset = 240,
+		},
+		position = {
+			count = 84,
+			numComp = 3,
+			offset = 420,
+		},
+		tangent = {
+			count = 80,
+			numComp = 4,
+			offset = 504,
+		},
+		uv0 = {
+			count = 120,
+			numComp = 2,
+			offset = 584,
+		},
+	},
+}
+end

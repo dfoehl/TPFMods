@@ -1,0 +1,304 @@
+function data()
+return {
+	animations = {
+		
+	},
+	children = {
+		{
+			id = "vehicle/tram/DT8.12/DT8.12 Inside.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, -0, 0, 0.450, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Cockpit.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, -0, 0, 0.450, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Glass.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, -0, 0, 0.450, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Door.grp",
+			transf = {
+				-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 5.580, 1.325, 1, 1,  
+			},
+			type = "GROUP",
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Door.grp",
+			transf = {
+				1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 5.580, -1.325, 1, 1,  
+			},
+			type = "GROUP",
+		},	 {
+			id = "vehicle/tram/DT8.12/DT8.12 Door.grp",
+			transf = {
+				-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 12.8, 1.325, 1, 1,  
+			},
+			type = "GROUP",
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Door.grp",
+			transf = {
+				1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 12.8, -1.325, 1, 1,  
+			},
+			type = "GROUP",
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Bogie.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 3.3, 0, 0, 1,  
+			},
+			type = "GROUP",			
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Bogie.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 15.3, 0, 0, 1, 
+			},
+			type = "GROUP",	
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Outside.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, -0, 0, 0.450, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Coupling retracted.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0.45, 0, 0, 1,
+			},
+			type = "MESH",				
+		},  {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1.1, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 1.1, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 2.785, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 2.785, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 2.785, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 2.785, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Single Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 4.47, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 4.47, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 6.6625, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 6.6625, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 8.3475, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 8.3475, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 8.3475, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 8.3475, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 10.0325, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 10.0325, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 10.0325, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 10.0325, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 11.7175, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 11.7175, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 15.715, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 15.715, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 17.4, 0, 0, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Double Seat.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 17.4, 0, 0, 1, 
+			},
+			type = "MESH",				
+		},
+	},
+	events = {
+		open_all_doors = {
+			[4] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+			[5] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+			[6] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+			[7] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+		},
+		close_all_doors = {
+			[4] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+			[5] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+			[6] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+			[7] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+		},
+		open_doors_left = {
+			[4] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+			[6] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+		},
+		close_doors_left = {
+			[4] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+			[6] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+		},
+		open_doors_right = {
+			[5] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+			[7] = {
+				forward = true,
+				name = "open_all_doors",
+			},
+		},
+		close_doors_right = {
+			[5] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+			[7] = {
+				forward = false,
+				name = "open_all_doors",
+			},
+		},		
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end

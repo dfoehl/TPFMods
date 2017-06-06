@@ -1,0 +1,271 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = {
+			13.336*0.96, 1.5955, 4.566,
+		},
+		bbMin = {
+			-13.208*0.96, -1.5955, 0.0,
+		},
+
+	},
+	collider = {
+		params = {
+
+		},
+		type = "MESH",
+
+	},
+	lods = {
+		{
+			animations = {
+
+			},
+			children = {
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_waggon.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_connector.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -13.116*0.96, 0.0, 0.0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_d3.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_d4.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_d5.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_d6.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+								{
+					id = "vehicle/train/mz_ice3/mz_ice3_k3.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 11.896*0.96, 1.464, 0.827, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_k4.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 11.896*0.96, -1.467, 0.827, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_k5.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -11.911*0.96, 1.467, 0.827, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_k6.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -11.912*0.96, -1.484, 0.827, 1,
+					},
+					type = "MESH",
+
+				},
+
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_innen2.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_innen3.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_connector.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 13.096*0.96, 0.0, 0.0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3_bogie_w.grp",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 9.143*0.96, 0, 0, 1,
+					},
+					type = "GROUP",
+
+				}, {
+					id = "vehicle/train/mz_ice3_bogie_w.grp",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -9.1*0.96, 0, 0, 1,
+					},
+					type = "GROUP",
+
+				},
+			},
+		events = {
+				open_all_doors = {
+					[3] = { name = "opend3", forward = true },
+					[4] = { name = "opend4", forward = true },
+					[5] = { name = "opend5", forward = true },
+					[6] = { name = "opend6", forward = true },
+					[7] = { name = "openk3", forward = true },
+					[8] = { name = "openk4", forward = true },
+					[9] = { name = "openk5", forward = true },
+					[10] = { name = "openk6", forward = true },
+				},
+				close_all_doors = {
+					[3] = { name = "opend3", forward = false },
+					[4] = { name = "opend4", forward = false },
+					[5] = { name = "opend5", forward = false },
+					[6] = { name = "opend6", forward = false },
+					[7] = { name = "openk3", forward = false },
+					[8] = { name = "openk4", forward = false },
+					[9] = { name = "openk5", forward = false },
+					[10] = { name = "openk6", forward = false },
+				},
+ 				open_doors_left = {
+					[3] = { name = "opend3", forward = true },
+					[5] = { name = "opend5", forward = true },
+					[7] = { name = "openk3", forward = true },
+					[9] = { name = "openk5", forward = true },
+				},
+				close_doors_left = {
+					[3] = { name = "opend3", forward = false },
+					[5] = { name = "opend5", forward = false },
+					[7] = { name = "openk3", forward = false },
+					[9] = { name = "openk5", forward = false },
+				},
+				open_doors_right = {
+					[4] = { name = "opend4", forward = true },
+					[6] = { name = "opend6", forward = true },
+					[8] = { name = "openk4", forward = true },
+					[10] = { name = "openk6", forward = true },
+				},
+				close_doors_right = {
+					[4] = { name = "opend4", forward = false },
+					[6] = { name = "opend6", forward = false },
+					[8] = { name = "openk4", forward = false },
+					[10] = { name = "openk6", forward = false },
+				},
+			},
+			matConfigs = {
+				{
+					0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+				},
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 2490,
+
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 2000,
+			yearTo = 0,
+
+		},
+		cost = {
+			price = -1,
+
+		},
+		maintenance = {
+			lifespan = 50,
+			runningCosts = -1,
+
+		},
+		railVehicle = {
+			configs = {
+				{
+					axles = {
+						"vehicle/train/mz_ice3/mz_ice3_w1.msh",
+					},
+					fakeBogies = {
+
+					},
+
+				},
+			},
+			engines = {
+
+			},
+			soundSet = {
+				horn = "",
+				name = "mz_ice3_waggon",
+
+			},
+			topSpeed = 320,
+			weight = 54.0,
+
+		},
+		transportVehicle = {
+			capacities = {
+				{
+					capacity = 74,
+					type = "PASSENGERS",
+
+				},
+			},
+			carrier = "RAIL",
+			loadSpeed = 2,
+			multipleUnitOnly = true
+		},
+
+	},
+
+}
+end

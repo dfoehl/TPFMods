@@ -1,0 +1,248 @@
+function data()
+
+return { 
+	type = "STREET_STATION",
+	description = {
+		name = _(wizzPlatforms.ModularRamp),
+		Description = _(wizzPlatforms.ModularRampDescription)
+	},
+	buildMode = "MULTI",
+	availability = {
+		yearFrom = 1985
+	},
+	order = 26343 * 10000 + 01 * 100 + 1,
+	params = { 
+		{
+			key = "type",
+			name = _(wizzPlatforms.params.stationType),
+			values = { _(wizzPlatforms.params.normal), _(wizzPlatforms.params.endStation) },
+		}, {
+			key = "length",
+			name = _(wizzPlatforms.params.length),
+			values = { _(wizzPlatforms.params.single), _(wizzPlatforms.params.double) },
+		}, {
+			key = "plattform",
+			name = _(wizzPlatforms.params.plattform),
+			values = { _(wizzPlatforms.params.left), _(wizzPlatforms.params.right), _(wizzPlatforms.params.both) },
+		}, {
+			key = "ramp",
+			name = _(wizzPlatforms.params.ramp),
+			values = { _(wizzPlatforms.params.left), _(wizzPlatforms.params.both) },
+		}, {
+			key = "streetSecondConnection",
+			name = _("Second street connection"),
+			values = { _("No"), _("Yes") }, 
+		}, {
+			key = "streetSecondConnectionTram",
+			name = _("Second street Tram"),
+			values = { _("No"), _("Yes"), _("Electric") }, 
+		},
+	},
+	
+	updateFn = function(params)
+		local result = { }
+		local model = { }
+		local length
+		local lengthMod = 0
+		local faces
+		
+		result.edgeLists = { }
+		result.groundFaces = { }
+		result.models = { }
+		
+		if (params.length == 0) then
+			model.length = "40"
+			length = 60
+		else
+			model.length = "80"
+			length = 100
+		end
+		
+		if (params.type == 0) then
+			model.ende = ""
+		else
+			model.ende = " end"
+		end
+		
+		local transf
+		
+		if(model.ende == "" and params.length == 1) then
+			transf = { 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 20, 2.5+1.4, -6, 1, }
+		elseif (model.ende == "") then
+			transf = { 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 20, 2.5+1.4, -6, 1, }
+		else
+			transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 72, 2.5+1.4, -6, 1, }
+			lengthMod = 72-length
+		end
+		
+		if(params.plattform == 0 or params.plattform == 2) then
+			result.models[#result.models+1] = {
+				id = "/station/tram/high level/station ${length}${ende}.mdl" % model,
+				transf = {-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, length+lengthMod, -2.5-1.4, -6, 1, }
+			}
+		end
+		
+		if((params.plattform == 1 or params.plattform == 2)) then
+			result.models[#result.models+1] = {
+				id = "/station/tram/high level/station ${length}${ende}.mdl" % model,
+				transf = transf
+			}
+		end
+		
+		if (params.type == 0) then
+			length = length + 20
+		else
+			length = length + 12
+		end
+		
+		result.models[#result.models+1] = {
+			id = "/station/tram/high level/ramp.mdl",
+			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -120, 0, 0, 1, }
+		}
+		result.edgeLists[#result.edgeLists+1] = {
+			type = "STREET",
+			params = {
+				type = "new_medium.lua",
+				tramTrackType = "ELECTRIC",
+			},
+			edges = {
+				{ { -130, 0, 0 }, { 10, 0, 0 } },
+				{ { -120, 0, 0 }, { 10, 0, 0 } },
+			},
+			snapNodes = { 0 }
+		}
+		
+		if(params.streetSecondConnection == 1) then
+			secondTramType = "NO"
+			if(params.streetSecondConnectionTram == 1) then
+				secondTramType = "YES"
+			elseif(params.streetSecondConnectionTram == 2) then
+				secondTramType = "ELECTRIC"
+			end
+		
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = secondTramType,
+				},
+				edges = {
+					{ { 9, -10, 0 }, { 0, 10, 0 } },
+					{ { 9, 0, 0 }, { 0, 10, 0 } },
+				},
+				snapNodes = { 0 }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = secondTramType,
+				},
+				edges = {
+					{ { 9, 10, 0 }, { 0, -10, 0 } },
+					{ { 9, 0, 0 }, { 0, -10, 0 } },
+				},
+				snapNodes = { 0 }
+			}
+		end
+				
+		faces = {
+			{ {-20, 9, 0}, {0, 9, 0}, {0, -9, 0}, {-20, -9, 0}  },
+			{ {-20, 9, 0}, {-120, 9, 0}, {-120, 7, 0}, {-20, 6, 0} },
+			{ {-120, -7, 0}, {-20, -6, 0}, {-20, -9, 0}, {-120, -9, 0} },
+			{ {-120, 6.5, -0.5}, {-20, 5.5, -6.5}, {-20, -5.5, -6.5}, {-120, -6.5, -0.5} }
+		}
+		
+		if(params.ramp == 1 and params.type == 0) then
+			result.models[#result.models+1] = {
+				id = "/station/tram/high level/ramp.mdl",
+				transf = { -1, 0, 0, 0, -0, -1, 0, 0, 0, 0, 1, 0, 120+length, 0, 0, 1, }
+			}
+			
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { 130+length, 0, 0 }, { -10, 0, 0 } },
+					{ { 120+length, 0, 0 }, { -10, 0, 0 } },
+				},
+				snapNodes = { 0 }
+			}
+			
+			if(params.streetSecondConnection == 1) then
+				result.edgeLists[#result.edgeLists+1] = {
+					type = "STREET",
+					params = {
+						type = "new_medium.lua",
+					},
+					edges = {
+						{ { length-9, -10, 0 }, { 0, 10, 0 } },
+						{ { length-9, 0, 0 }, { 0, 10, 0 } },
+					},
+					snapNodes = { 0 }
+				}
+				result.edgeLists[#result.edgeLists+1] = {
+					type = "STREET",
+					params = {
+						type = "new_medium.lua",
+					},
+					edges = {
+						{ { length-9, 10, 0 }, { 0, -10, 0 } },
+						{ { length-9, 0, 0 }, { 0, -10, 0 } },
+					},
+					snapNodes = { 0 }
+				}
+			end
+		
+			faces = {
+				{ {20+length, 9, 0}, {0+length, 9, 0}, {0+length, -9, 0}, {20+length, -9, 0}  },
+				{ {120+length, 7, 0}, {20+length, 6, 0}, {20+length, 9, 0}, {120+length, 9, 0} },
+				{ {120+length, -7, 0}, {20+length, -6, 0}, {20+length, -9, 0}, {120+length, -9, 0} },
+				{ {120+length, 6.5, -0.5}, {10+length, 5.5, -6.5}, {10+length, -5.5, -6.5}, {120+length, -6.5, -0.5} }
+			}
+		end
+		
+		if(params.ramp == 0 and params.type == 0) then
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				edgeType = "TUNNEL",
+				edgeTypeName = "street_old.lua", 
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { length, 0, -6 }, { 10, 0, 0 } },
+					{ { length + 10, 0, -6 }, { 10, 0, 0 } },
+				},
+				snapNodes = { 1 }
+			}
+		end
+				
+		if (faces ~= nil) then
+			result.terrainAlignmentLists = {
+				{
+					type = "EQUAL",
+					faces = faces,
+					slopeLow = 0.8,
+					slopeHigh = 0.9
+				}
+			}
+			
+			for k,face in pairs(faces) do
+				result.groundFaces[#result.groundFaces + 1] = { face = face, modes = { { type = "FILL", key = "town_concrete" } } }
+				result.groundFaces[#result.groundFaces + 1] = { face = face, modes = { { type = "STROKE_OUTER", key = "town_concrete_border" } } }
+			end
+		end
+		
+		result.cost = 12000
+		result.maintenanceCost = 500
+
+		return result
+	end
+}
+
+end

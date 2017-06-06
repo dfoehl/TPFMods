@@ -1,0 +1,59 @@
+function data()
+return {
+	animations = {
+		--Animation Config goes here!
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 288,
+					offset = 0,
+				},
+				position = {
+					count = 288,
+					offset = 288,
+				},
+				tangent = {
+					count = 288,
+					offset = 576,
+				},
+				uv0 = {
+					count = 288,
+					offset = 864,
+				},
+			},
+			materials = {
+				"station/tram/high_level/underground.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 864,
+			numComp = 3,
+			offset = 1152,
+		},
+		position = {
+			count = 228,
+			numComp = 3,
+			offset = 2016,
+		},
+		tangent = {
+			count = 384,
+			numComp = 4,
+			offset = 2244,
+		},
+		uv0 = {
+			count = 576,
+			numComp = 2,
+			offset = 2628,
+		},
+	},
+}
+end

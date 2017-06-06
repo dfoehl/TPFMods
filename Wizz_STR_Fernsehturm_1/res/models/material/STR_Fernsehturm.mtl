@@ -1,0 +1,39 @@
+function data()
+return {
+	params = {
+		fade_out_range = {
+			fadeOutEndDist = 20000,
+			fadeOutStartDist = 10000,
+		},
+		map_albedo_opacity = {
+			compressionAllowed = true,
+			fileName = "models/asset/STR_Fernsehturm_albedo_opacity.dds",
+			magFilter = "LINEAR",
+			minFilter = "LINEAR_MIPMAP_LINEAR",
+			mipmapAlphaScale = 0,
+			type = "TWOD",
+			wrapS = "REPEAT",
+			wrapT = "REPEAT",
+		},
+		map_metal_gloss_ao = {
+			compressionAllowed = true,
+			fileName = "models/asset/STR_Fernsehturm_metal_gloss_ao.dds",
+			magFilter = "LINEAR",
+			minFilter = "LINEAR_MIPMAP_LINEAR",
+			mipmapAlphaScale = 0,
+			type = "TWOD",
+			wrapS = "REPEAT",
+			wrapT = "REPEAT",
+		},
+		props = {
+			coeffs = {
+				1, 1, 0.25, 20, 
+			},
+		},
+		two_sided = {
+			twoSided = true,
+		},
+	},
+	type = "PHYS_TRANSPARENT",
+}
+end

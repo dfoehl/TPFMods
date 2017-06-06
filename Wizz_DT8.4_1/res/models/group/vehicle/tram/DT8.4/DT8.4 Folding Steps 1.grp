@@ -1,0 +1,56 @@
+function data()
+return {
+	animations = {
+		open_door_and_steps = {
+			params = {
+				origin = { 0, 0, 0, },
+				keyframes = {
+					{
+						time = 0,
+						rot = { 0, 0, 0 },
+						transl = { 0, 0, 0 }
+					}, {
+						time = 1000,
+						rot = { 0, 0, -90 },
+						transl = { 0, 0, 0 }
+					}
+				}
+			},			
+			type = "KEYFRAME"
+		},
+	},
+	children = {
+		{
+			id = "vehicle/tram/DT8.4/DT8.4 Folding Step 2.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.4/DT8.4 Folding Steps 1.1.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.221, 0, 1,
+			},
+			type = "GROUP",				
+		},
+	},
+	events = {
+		open_door_and_steps = {
+			[0] = {
+				forward = true,
+				name = "open_door_and_steps",
+			},
+			[2] = {
+				forward = true,
+				name = "open_door_and_steps",
+			},
+		},
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end

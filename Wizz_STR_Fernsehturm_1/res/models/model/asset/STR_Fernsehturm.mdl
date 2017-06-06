@@ -1,0 +1,79 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = {
+			8, 8, 218, 
+		},
+		bbMin = {
+			-8, -8, 0, 
+		},
+		
+	},
+	collider = {
+		params = {
+			
+		},
+		type = "MESH",
+		
+	},
+	lods = {
+		{
+			animations = {
+				
+			},
+			children = {
+				{
+					id = "asset/STR_Fernsehturm_Medium.msh",
+					transf = {
+						1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1, 
+					},
+					type = "MESH",
+					
+				}, 
+			},
+			events = {
+				
+			},
+			matConfigs = {
+				{
+					0, 
+				}, 
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1000,
+			
+		}, 
+		{
+			animations = {
+				
+			},
+			children = {
+				{
+					id = "asset/STR_Fernsehturm_Low.msh",
+					transf = {
+						1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1, 
+					},
+					type = "MESH",
+					
+				}, 
+			},
+			events = {
+				
+			},
+			matConfigs = {
+				{
+					0, 
+				}, 
+			},
+			static = false,
+			visibleFrom = 1000,
+			visibleTo = 500000,
+			
+		},
+	},
+	metadata = {
+	},
+	
+}
+end

@@ -1,0 +1,59 @@
+function data()
+return {
+	animations = {
+		--Animation Config goes here!
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 1176,
+					offset = 0,
+				},
+				position = {
+					count = 1176,
+					offset = 1176,
+				},
+				tangent = {
+					count = 1176,
+					offset = 2352,
+				},
+				uv0 = {
+					count = 1176,
+					offset = 3528,
+				},
+			},
+			materials = {
+				"/vehicle/tram/DT8.4_Interior.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 3528,
+			numComp = 3,
+			offset = 4704,
+		},
+		position = {
+			count = 696,
+			numComp = 3,
+			offset = 8232,
+		},
+		tangent = {
+			count = 1568,
+			numComp = 4,
+			offset = 8928,
+		},
+		uv0 = {
+			count = 2352,
+			numComp = 2,
+			offset = 10496,
+		},
+	},
+}
+end

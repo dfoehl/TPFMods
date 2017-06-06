@@ -1,0 +1,75 @@
+
+local unitMat = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }
+local models = {
+	"asset/STR_Fernsehturm.mdl",
+}
+
+local parameter = {
+	{
+		key = "Variation800531924",
+		name = _(wizzStr.param.variation),
+		values = { 
+			_(wizzStr.param.visitable),
+			_(wizzStr.param.destructable),
+			},
+		defaultIndex = 0,
+	}
+}
+
+function data() return { 
+	type = "ASSET_DEFAULT",
+	buildMode = "SINGLE",
+	categories = { "landmarks" },
+	availability = {
+		yearFrom = 1955,
+	},
+	description = {
+		name = _(wizzStr.tvtower),
+		description = _(wizzStr.mod.author)
+	},
+	
+	order = 26343 * 10000 + 00 * 100 + 0,
+	skipCollision = false,
+	autoRemovable = false,
+	params = parameter,
+	updateFn = function(params)
+		local result = { }
+
+		result.models = {
+			{
+				id = models[1],
+				transf = unitMat,
+			},
+		}
+
+		result.terrainAlignmentLists = { {
+			type = "EQUAL",
+			faces =  { }
+		} }
+		
+		if params.Variation800531924 == 0 then		
+			result.personCapacity = {
+				type = "COMMERCIAL",
+				capacity = 400
+			}
+			
+			local edges = {}
+			edges[#edges + 1] = { { 0.0, -26.0,  0.0 },  { 00.0, 8.0, 0.00 } }
+			edges[#edges + 1] = { { 0.0, -3.0,  0.0 },  { 00.0, 8.0, 0.00 } }
+			
+			result.edgeLists = {
+				{
+					type = "STREET",
+					params = { type = "new_medium.lua" },
+					edges = edges,
+					snapNodes = { 0 }
+				}
+			}		
+		end
+		
+		result.cost = 4000000
+		result.bulldozeCost = 400000
+		
+		return result
+	end
+} end

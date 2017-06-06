@@ -1,0 +1,137 @@
+function data()
+
+return {
+	boundingInfo = {
+		bbMax = {
+			13.336*0.96, 1.5955, 4.566,
+		},
+		bbMin = {
+			-13.208*0.96, -1.5955, 0.0,
+		},
+
+	},
+	collider = {
+		params = {
+
+		},
+		type = "MESH",
+
+	},
+	lods = {
+		{
+			animations = {
+
+			},
+			children = {
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_bistro.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_connector.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -13.116*0.96, 0.0, 0.0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3/mz_ice3_connector.msh",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 13.096*0.96, 0.0, 0.0, 1,
+					},
+					type = "MESH",
+
+				},
+
+				{
+					id = "vehicle/train/mz_ice3_bogie_w.grp",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 9.143*0.96, 0, 0, 1,
+					},
+					type = "GROUP",
+
+				}, {
+					id = "vehicle/train/mz_ice3_bogie_w.grp",
+					transf = {
+						0.96, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -9.1*0.96, 0, 0, 1,
+					},
+					type = "GROUP",
+
+				},
+			},
+			events = {
+
+			},
+			matConfigs = {
+				{
+					0, 0, 0, 0, 0, 0, 0, 0,
+				},
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 2490,
+
+		},
+	},
+		metadata = {
+		availability = {
+			yearFrom = 2000,
+			yearTo = 0,
+
+		},
+		cost = {
+			price = -1,
+
+		},
+		maintenance = {
+			lifespan = 50,
+			runningCosts = -1,
+
+		},
+		railVehicle = {
+			configs = {
+				{
+					axles = {
+						"vehicle/train/mz_ice3/mz_ice3_w1.msh",
+					},
+					fakeBogies = {
+
+					},
+
+				},
+			},
+			engines = {
+
+			},
+			soundSet = {
+				horn = "",
+				name = "mz_ice3_waggon",
+
+			},
+			topSpeed = 320,
+			weight = 53.0,
+
+		},
+		transportVehicle = {
+			capacities = {
+				{
+					capacity = 30,
+					type = "PASSENGERS",
+
+				},
+			},
+			carrier = "RAIL",
+			multipleUnitOnly = true
+		},
+
+	},
+
+}
+end

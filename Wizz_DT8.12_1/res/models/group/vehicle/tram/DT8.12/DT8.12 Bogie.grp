@@ -1,0 +1,36 @@
+function data()
+return {
+	animations = {
+		
+	},
+	children = {
+		{
+			id = "vehicle/tram/DT8.12/Axle.msh",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0.365, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/Axle.msh",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0, 0.365, 1, 
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.12/DT8.12 Bogie.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1, 
+			},
+			type = "MESH",				
+		},
+	},
+	events = {		
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end

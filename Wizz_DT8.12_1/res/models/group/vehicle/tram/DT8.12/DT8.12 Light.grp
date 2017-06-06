@@ -1,0 +1,27 @@
+function data()
+return {
+	animations = { },
+	children = {
+		{
+			id = "vehicle/asset/lod_0_light_round_white.msh",
+			transf = { 0.707, 0.707, 0, 0, -0.488, 0.488, 0, 0, 0, 0, 0.690, 0, 0.1, -0.145, 0, 1, },
+			type = "MESH",				
+		}, {
+			id = "vehicle/asset/lod_0_light_round_red.msh",
+			transf = { 0.707, 0.707, 0, 0, -0.488, 0.488, 0, 0, 0, 0, 0.690, 0, 0, 0, 0, 1, },
+			type = "MESH",				
+		}, {
+			id = "vehicle/asset/lod_0_light_round_white.msh",
+			transf = { 0.707, 0.707, 0, 0, -0.488, 0.488, 0, 0, 0, 0, 0.690, 0, -0.1, 0.145, 0, 1, },
+			type = "MESH",				
+		},
+	},
+	events = { },
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end

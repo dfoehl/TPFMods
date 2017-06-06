@@ -1,0 +1,314 @@
+function data()
+
+return { 
+	type = "STREET_STATION",
+	description = {
+		name = _(wizzPlatforms.Modular),
+		Description = _(wizzPlatforms.ModularDescription)
+	},
+	buildMode = "MULTI",
+	availability = {
+		yearFrom = 1985
+	},
+	order = 26343 * 10000 + 01 * 100 + 1,
+	params = {
+		{
+			key = "type",
+			name = _(wizzPlatforms.params.stationType),
+			values = { _(wizzPlatforms.params.normal), _(wizzPlatforms.params.endStation) },
+		}, {
+			key = "length",
+			name = _(wizzPlatforms.params.length),
+			values = { _(wizzPlatforms.params.single), _(wizzPlatforms.params.double) },
+		}, {
+			key = "plattform",
+			name = _(wizzPlatforms.params.plattform),
+			values = { _(wizzPlatforms.params.left), _(wizzPlatforms.params.right), _(wizzPlatforms.params.both) },
+		},
+	},
+	
+	updateFn = function(params)
+		local result = { }
+		local model = { }
+		
+		if (params.length == 0) then
+			model.length = "40"
+		else
+			model.length = "80"
+		end
+		
+		if (params.type == 0) then
+			model.ende = ""
+		else
+			model.ende = " end"
+		end
+		
+		result.models = { }
+		local transf
+		
+		if(params.type == 0 and params.length == 1) then
+			transf = { 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, -2.5-1.4, -60, 0, 1, }
+		elseif (params.type == 0) then
+			transf = { 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, -2.5-1.4, -20, 0, 1, }
+		else
+			transf = { 0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, -2.5-1.4, 20, 0, 1, }
+		end
+		
+		if(params.plattform == 0 or params.plattform == 2) then
+			result.models[#result.models+1] = {
+				id = "/station/tram/high level/station ${length}${ende}.mdl" % model,
+				transf = { 0, -1, 0, 0, -1, 0, 0, 0, 0, 0, 1, 0, 2.5+1.4, 20, 0, 1, }
+			}
+		end
+		
+		if((params.plattform == 1 or params.plattform == 2)) then
+			result.models[#result.models+1] = {
+				id = "/station/tram/high level/station ${length}${ende}.mdl" % model,
+				transf = transf
+			}
+		end
+		
+		-- Edges festlegen
+		result.edgeLists = { }
+		result.groundFaces = { }
+		result.terrainAlignmentLists = { }
+		local faces = { }
+		
+		if (params.type == 1 and params.length == 0) then
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -52, .0 }, { .0, -10.0, .0 } },
+					{ { .0, -62, .0 }, { .0, -10.0, .0 } },
+				},
+				snapNodes = { 1 }
+			}
+			
+			result.terrainAlignmentLists[#result.terrainAlignmentLists + 1] = 
+			{
+				type = "EQUAL",
+				faces = { { {9, -52, 0}, {6, -20, 0}, {6, 20, 0}, {-6, 20, 0}, {-6, -20, 0}, {-9, -52, 0} } },
+				slopeLow = 0.5,
+				slopeHigh = 0.8
+			}
+			
+			if (params.plattform == 0 or params.plattform == 2) then
+				faces[#faces +1] =  { {5, -52, 0.3}, {9, -52, 0.3}, {7, -30, 0.3,}, {5, -30, 0.3} } 
+			end
+						
+			if (params.plattform == 1 or params.plattform == 2) then
+				faces[#faces +1] =  { {-9, -52, 0.3}, {-5, -52, 0.3}, {-5, -30, 0.3}, {-7, -30, 0.3,} }
+			end
+			
+		end
+		
+		if (params.type == 1 and params.length == 1) then
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -52, .0 }, { .0, -10.0, .0 } },
+					{ { .0, -62, .0 }, { .0, -10.0, .0 } },
+				},
+				snapNodes = { 1 }
+			}
+			
+			result.terrainAlignmentLists[#result.terrainAlignmentLists + 1] = 
+			{
+				type = "EQUAL",
+				faces = { { {9, -52, 0}, {6, -20, 0}, {6, 60, 0}, {-6, 60, 0}, {-6, -20, 0}, {-9, -52, 0} } },
+				slopeLow = 0.5,
+				slopeHigh = 0.8
+			}
+			
+			if (params.plattform == 0 or params.plattform == 2) then
+				faces[#faces +1] =  { {5, -52, 0.3}, {9, -52, 0.3}, {7, -30, 0.3,}, {5, -30, 0.3} } 
+			end
+						
+			if (params.plattform == 1 or params.plattform == 2) then
+				faces[#faces +1] =  { {-9, -52, 0.3}, {-5, -52, 0.3}, {-5, -30, 0.3}, {-7, -30, 0.3,} }
+			end
+			
+		end
+			
+		if (params.type == 0 and params.length == 0) then
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, 40, .0 }, { .0, 10.0, .0 } },
+					{ { .0, 50, .0 }, { .0, 10.0, .0 } },
+				},
+				snapNodes = { 1 }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -50, .0 }, { .0, 10.0, .0 } },
+					{ { .0, -40, .0 }, { .0, 10.0, .0 } },
+				},
+				snapNodes = { 0 }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -40, .0 }, { .0, 5.0, .0 } },
+					{ { .0, -35, .0 }, { .0, 5.0, .0 } },
+				},
+				snapNodes = { }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -35, .0 }, { .0, 70.0, .0 } },
+					{ { .0, 35, .0 }, { .0, 70.0, .0 } },
+				},
+				snapNodes = { }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, 35, .0 }, { .0, 5.0, .0 } },
+					{ { .0, 40, .0 }, { .0, 5.0, .0 } },
+				},
+				snapNodes = { }
+			}
+			
+			-- result.terminalGroups = { }
+			
+			-- if(params.plattform == 0) then
+				-- result.terminalGroups[#result.terminalGroups + 1] = {
+					-- terminals = { {0, 0} },
+					-- vehicleNodeOverride = 6
+				-- }
+			-- end
+			-- if(params.plattform == 1) then
+				-- result.terminalGroups[#result.terminalGroups + 1] = {
+					-- terminals = { {0, 0} },
+					-- vehicleNodeOverride = 7
+				-- }
+			-- end
+			-- if(params.plattform == 2) then
+				-- result.terminalGroups[#result.terminalGroups + 1] = {
+					-- terminals = { {0, 0} },
+					-- vehicleNodeOverride = 6
+				-- }
+				-- result.terminalGroups[#result.terminalGroups + 1] = {
+					-- terminals = { {1, 0} },
+					-- vehicleNodeOverride = 7
+				-- }
+			-- end
+		end
+		
+		if (params.type == 0 and params.length == 1) then
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, 40, .0 }, { .0, 10.0, .0 } },
+					{ { .0, 50, .0 }, { .0, 10.0, .0 } },
+				},
+				snapNodes = { 1 }
+			}		
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -90, .0 }, { .0, 10.0, .0 } },
+					{ { .0, -80, .0 }, { .0, 10.0, .0 } },
+				},
+				snapNodes = { 0 }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -80, .0 }, { .0, 5.0, .0 } },
+					{ { .0, -75, .0 }, { .0, 5.0, .0 } },
+				},
+				snapNodes = { }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, -75, .0 }, { .0, 110.0, .0 } },
+					{ { .0, 35, .0 }, { .0, 110.0, .0 } },
+				},
+				snapNodes = { }
+			}
+			result.edgeLists[#result.edgeLists+1] = {
+				type = "STREET",
+				params = {
+					type = "new_medium.lua",
+					tramTrackType = "ELECTRIC",
+				},
+				edges = {
+					{ { .0, 35, .0 }, { .0, 5.0, .0 } },
+					{ { .0, 40, .0 }, { .0, 5.0, .0 } },
+				},
+				snapNodes = { }
+			}
+		end
+		
+		if (faces ~= nil) then
+			result.terrainAlignmentLists[#result.terrainAlignmentLists + 1] = 
+			{
+				type = "EQUAL",
+				faces = faces,
+				slopeLow = 0.5,
+				slopeHigh = 0.8
+			}
+			
+			for k,face in pairs(faces) do
+				result.groundFaces[#result.groundFaces + 1] = { face = face, modes = { { type = "FILL", key = "town_concrete" } } }
+				result.groundFaces[#result.groundFaces + 1] = { face = face, modes = { { type = "STROKE_OUTER", key = "town_concrete_border" } } }
+			end
+		end
+		
+		result.cost = 12000
+		result.maintenanceCost = 500
+
+		return result
+	end
+}
+
+end
