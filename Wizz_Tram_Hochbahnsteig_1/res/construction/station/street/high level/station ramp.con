@@ -49,6 +49,7 @@ return {
 		result.edgeLists = { }
 		result.groundFaces = { }
 		result.models = { }
+		faces = { }
 		
 		if (params.length == 0) then
 			model.length = "40"
@@ -99,6 +100,11 @@ return {
 			id = "/station/tram/high level/ramp.mdl",
 			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -120, 0, 0, 1, }
 		}
+		result.groundFaces[#result.groundFaces + 1] = { 
+			face = { {-3, 8.5, 0}, {-3, -8.5, 0}, {-120, -8.5, 0}, {-120, 8.5, 0}},
+			modes = { { type = "FILL", key = "hole" } }
+		}
+		
 		result.edgeLists[#result.edgeLists+1] = {
 			type = "STREET",
 			params = {
@@ -146,17 +152,20 @@ return {
 			}
 		end
 				
-		faces = {
-			{ {-20, 9, 0}, {0, 9, 0}, {0, -9, 0}, {-20, -9, 0}  },
-			{ {-20, 9, 0}, {-120, 9, 0}, {-120, 7, 0}, {-20, 6, 0} },
-			{ {-120, -7, 0}, {-20, -6, 0}, {-20, -9, 0}, {-120, -9, 0} },
-			{ {-120, 6.5, -0.5}, {-20, 5.5, -6.5}, {-20, -5.5, -6.5}, {-120, -6.5, -0.5} }
-		}
+		faces[#faces + 1] = { {0, -9, 0.25}, {0, 9, 0.25}, {-110, 9, 0.25}, {-110, -9, 0.25}  }				
+		faces[#faces + 1] = { {-110, -9, 0.25}, {-110, -8, 0.25}, {-120, -8, 0.25}, {-120, -9, 0.25}  }				
+		faces[#faces + 1] = { {-120, 9, 0.25}, {-120, 8, 0.25}, {-110, 8, 0.25}, {-110, 9, 0.25}  }			
+		faces[#faces + 1] = { {-120, -8, 0}, {-120, 8, 0}, {-110, 8, 0}, {-110, -8, 0}  }
 		
 		if(params.ramp == 1 and params.type == 0) then
 			result.models[#result.models+1] = {
 				id = "/station/tram/high level/ramp.mdl",
 				transf = { -1, 0, 0, 0, -0, -1, 0, 0, 0, 0, 1, 0, 120+length, 0, 0, 1, }
+			}			
+			
+			result.groundFaces[#result.groundFaces + 1] = { 
+				face = { {10+length, -8, 0}, {10+length, 8, 0}, {120+length, 8, 0.5}, {120+length, -8, 0.5} },
+				modes = { { type = "FILL", key = "hole" } }
 			}
 			
 			result.edgeLists[#result.edgeLists+1] = {
@@ -177,6 +186,7 @@ return {
 					type = "STREET",
 					params = {
 						type = "new_medium.lua",
+					tramTrackType = secondTramType,
 					},
 					edges = {
 						{ { length-9, -10, 0 }, { 0, 10, 0 } },
@@ -188,6 +198,7 @@ return {
 					type = "STREET",
 					params = {
 						type = "new_medium.lua",
+					tramTrackType = secondTramType,
 					},
 					edges = {
 						{ { length-9, 10, 0 }, { 0, -10, 0 } },
@@ -197,12 +208,7 @@ return {
 				}
 			end
 		
-			faces = {
-				{ {20+length, 9, 0}, {0+length, 9, 0}, {0+length, -9, 0}, {20+length, -9, 0}  },
-				{ {120+length, 7, 0}, {20+length, 6, 0}, {20+length, 9, 0}, {120+length, 9, 0} },
-				{ {120+length, -7, 0}, {20+length, -6, 0}, {20+length, -9, 0}, {120+length, -9, 0} },
-				{ {120+length, 6.5, -0.5}, {10+length, 5.5, -6.5}, {10+length, -5.5, -6.5}, {120+length, -6.5, -0.5} }
-			}
+			faces[#faces + 1] = { {0+length, 9, 0}, {0+length, -9, 0}, {120+length, -9, 0}, {120+length, 9, 0} }
 		end
 		
 		if(params.ramp == 0 and params.type == 0) then
