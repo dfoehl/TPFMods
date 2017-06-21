@@ -1,12 +1,4 @@
-﻿local function getStreetNameList()
-	retVal = {}
-	print("streets: "..#streets)
-	for k, street in pairs(streets) do
-		print("Adding street "..street.name.." to paramters.")
-		retVal[#retVal] = street.name
-	end
-	return retVal
-end
+﻿local streetHelper = require "wizz/streetHelper"
 
 function data()
 
@@ -34,14 +26,14 @@ return {
 			key = "plattform",
 			name = _(wizzPlatforms.params.plattform),
 			values = { _(wizzPlatforms.params.left), _(wizzPlatforms.params.right), _(wizzPlatforms.params.both) },
-		}, {
-			key = "streetType",
-			name = _("wizzPlatforms.params.streetType"),
-			values = getStreetNameList(),
 		},
+		streetHelper.getStreetTypeParameter(),
 	},
 	
 	updateFn = function(params)
+		
+		streetHelper.evaluateParameter(params)
+	
 		local result = { }
 		local model = { }
 		

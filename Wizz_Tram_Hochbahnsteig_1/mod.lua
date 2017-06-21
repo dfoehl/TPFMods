@@ -7,10 +7,21 @@ function data()
 		if data.name then
 			print("Name: "..data.name)
 			print("Streetwidth: "..data.streetWidth)
-			streets[#streets+1] = { name = data.name, width = data.streetWidth }
+			streets[#streets+1] = {
+				fileName = fileName,
+				name = data.name,
+				width = data.streetWidth,
+				numLanes = data.numLanes,
+				yearTo = data.yearTo,
+				yearFrom = data.yearFrom
+			}
 		end
 		for k, v in pairs(data) do
-			print(k)
+			if (type(v) ~= "table" and type(v) ~= "boolean") then
+				print(k..": "..v)
+			else
+				print(k.." - "..type(v))
+			end
 		end
 		print("Streets: "..#streets)
 		print("----------------")
