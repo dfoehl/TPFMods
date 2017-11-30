@@ -1,0 +1,96 @@
+function data()
+return {
+	animations = {
+		open_door = {
+			params = {
+				origin = { -0.7+0.4242, 0, 0, },
+				keyframes = {
+					{
+						time = 0,
+						rot = { 0, 0, 0 },
+						transl = { 0, 0, 0 }
+					}, {
+						time = 1750,
+						rot = { 0, -135, 0 },
+						transl = { 0, 0, 0 }
+					}
+				}
+			},			
+			type = "KEYFRAME"
+		},
+		open_door_and_steps = {
+			params = {
+				origin = { -0.7+0.4242, 0, 0, },
+				keyframes = {
+					{
+						time = 0,
+						rot = { 0, 0, 0 },
+						transl = { 0, 0, 0 }
+					}, {
+						time = 1000,
+						rot = { 0, 0, 0 },
+						transl = { 0, 0, 0 }
+					}, {
+						time = 2750,
+						rot = { 0, -135, 0 },
+						transl = { 0, 0, 0 }
+					}
+				}
+			},			
+			type = "KEYFRAME"
+		},
+	},
+	matConfigs = {
+		{
+			0, 
+		},
+	},
+	subMeshes = {
+		{
+			indices = {
+				normal = {
+					count = 228,
+					offset = 0,
+				},
+				position = {
+					count = 228,
+					offset = 228,
+				},
+				tangent = {
+					count = 228,
+					offset = 456,
+				},
+				uv0 = {
+					count = 228,
+					offset = 684,
+				},
+			},
+			materials = {
+				"/vehicle/tram/DT8.4_Exterior+2.mtl",
+			},
+		},
+	},
+	vertexAttr = {
+		normal = {
+			count = 684,
+			numComp = 3,
+			offset = 912,
+		},
+		position = {
+			count = 168,
+			numComp = 3,
+			offset = 1596,
+		},
+		tangent = {
+			count = 304,
+			numComp = 4,
+			offset = 1764,
+		},
+		uv0 = {
+			count = 456,
+			numComp = 2,
+			offset = 2068,
+		},
+	},
+}
+end

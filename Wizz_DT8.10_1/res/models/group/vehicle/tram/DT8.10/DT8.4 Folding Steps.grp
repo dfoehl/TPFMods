@@ -1,0 +1,50 @@
+function data()
+return {
+	animations = { },
+	children = {
+		{
+			id = "vehicle/tram/DT8.4/DT8.4 Folding Step 1.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.4/DT8.4 Folding Steps 1.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.104, 0, 1,
+			},
+			type = "GROUP",				
+		}, {
+			id = "vehicle/tram/DT8.4/DT8.4 Folding Step 5.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0.295, -0.44251, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.4/DT8.4 Folding Steps 2.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.29, -0.51626, 1,
+			},
+			type = "GROUP",				
+		},
+	},
+	events = {
+		open_door_and_steps = {
+			[2] = {
+				forward = true,
+				name = "open_door_and_steps",
+			},
+			[4] = {
+				forward = true,
+				name = "open_door_and_steps",
+			},
+		},
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end
