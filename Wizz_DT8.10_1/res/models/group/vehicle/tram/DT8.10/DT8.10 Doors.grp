@@ -1,0 +1,50 @@
+function data()
+return {
+	animations = {
+		
+	},
+	children = {
+		{
+			id = "vehicle/tram/DT8.10/DT8.10 Door Right.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.7, -0.10, 0, 1, 
+			},
+			type = "GROUP",				
+		}, {
+			id = "vehicle/tram/DT8.10/DT8.10 Door Left.grp",
+			transf = {
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.7, -0.10, 0, 1, 
+			},
+			type = "GROUP",				
+		},		
+	},
+	events = {
+		open_all_doors = {
+			[1] = {
+				forward = true,
+				name = "open_door",
+			},
+			[2] = {
+				forward = true,
+				name = "open_door",
+			},
+		},
+		close_all_doors = {
+			[1] = {
+				forward = false,
+				name = "open_door",
+			},
+			[2] = {
+				forward = false,
+				name = "open_door",
+			},
+		},		
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end

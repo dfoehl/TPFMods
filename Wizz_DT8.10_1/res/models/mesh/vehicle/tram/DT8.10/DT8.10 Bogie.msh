@@ -12,47 +12,47 @@ return {
 		{
 			indices = {
 				normal = {
-					count = 1176,
+					count = 1104,
 					offset = 0,
 				},
 				position = {
-					count = 1176,
-					offset = 1176,
+					count = 1104,
+					offset = 1104,
 				},
 				tangent = {
-					count = 1176,
-					offset = 2352,
+					count = 1104,
+					offset = 2208,
 				},
 				uv0 = {
-					count = 1176,
-					offset = 3528,
+					count = 1104,
+					offset = 3312,
 				},
 			},
 			materials = {
-				"/vehicle/tram/DT8.10_Interior.mtl",
+				"/vehicle/tram/DT8.10_Exterior-2.mtl",
 			},
 		},
 	},
 	vertexAttr = {
 		normal = {
-			count = 3528,
+			count = 3312,
 			numComp = 3,
-			offset = 4704,
+			offset = 4416,
 		},
 		position = {
-			count = 696,
+			count = 672,
 			numComp = 3,
-			offset = 8232,
+			offset = 7728,
 		},
 		tangent = {
-			count = 1568,
+			count = 1472,
 			numComp = 4,
-			offset = 8928,
+			offset = 8400,
 		},
 		uv0 = {
-			count = 2352,
+			count = 2208,
 			numComp = 2,
-			offset = 10496,
+			offset = 9872,
 		},
 	},
 }

@@ -1,0 +1,66 @@
+function data()
+return {
+	animations = {		
+		open_door = {
+			params = {
+				origin = { 0, 0, 0, },
+				keyframes = {
+					{
+						time = 0,
+						rot = { 0, 0, 0 },
+						transl = { 0, 0, 0 }
+					}, {
+						time = 1750,
+						rot = { -135, 0, 0 },
+						transl = { 0, 0, 0 }
+					}
+				}
+			},			
+			type = "KEYFRAME"
+		},
+	},
+	children = {
+		{
+			id = "vehicle/tram/DT8.10/DT8.10 Door Right.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, -0.7, 0.10, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.10/DT8.10 Door Right Inside.msh",
+			transf = {
+				1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, -0.7, 0.10, 0, 1,
+			},
+			type = "MESH",				
+		}, {
+			id = "vehicle/tram/DT8.10/DT8.10 Door Pole.msh",
+			transf = {
+				-1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1,
+			},
+			type = "MESH",				
+		},
+	},
+	events = {
+		open_door = {
+			[0] = {
+				forward = true,
+				name = "open_door",
+			},
+			[1] = {
+				forward = true,
+				name = "open_door",
+			},
+			[2] = {
+				forward = true,
+				name = "open_door",
+			},
+		},
+	},
+	matConfigs = {
+		{
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		}, 
+	},
+	
+}
+end
