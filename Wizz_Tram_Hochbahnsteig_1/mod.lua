@@ -13,12 +13,14 @@ function data()
 				width = data.streetWidth,
 				numLanes = data.numLanes,
 				yearTo = data.yearTo,
-				yearFrom = data.yearFrom
+				yearFrom = data.yearFrom,
+				sidewalkHeight = data.sidewalkHeight,
+				sidewalkWidth = data.sidewalkWidth				
 			}
 		end
 		for k, v in pairs(data) do
 			if (type(v) ~= "table" and type(v) ~= "boolean") then
-				print(k..": "..v)
+				print(k.." = "..v)
 			else
 				print(k.." - "..type(v))
 			end

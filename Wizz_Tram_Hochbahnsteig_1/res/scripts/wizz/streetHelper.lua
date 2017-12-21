@@ -8,7 +8,7 @@ local streetDefinitions = {
 	{
 		name = "Large Street",
 		path = "res/config/street/new_large.lua"
-	},
+	}
 }
 
 local function printStreetData(street)
@@ -23,12 +23,9 @@ end
 
 function streetHelper.getStreetTypeParameter()
 	streetNames = {}
-	for k, street in pairs(streets) do
+	for k, street in pairs(streetDefinitions) do
 		print("Adding street "..street.name.." to paramters.")
 		streetNames[#streetNames+1] = _(street.name)
-	end
-	if #streetNames == 0 then
-		streetNames[1] = "Default"
 	end
 	printStreetData(streetNames)
 	return {
@@ -41,15 +38,18 @@ end
 function streetHelper.evaluateParameter(params)
 	local selectedStreet
 	print("Selected street type: "..params.streetType)
-	
+	streetPath = streetDefinitions[params.streetType+1].path
+
 	for k, street in pairs(streets) do
-		if street.fileName == path then
+		if street.fileName == streetPath then
 			selectedStreet = street
 			break
 		end
 	end
 	
 	printStreetData(selectedStreet)
+
+	return selectedStreet
 end
 
 return streetHelper

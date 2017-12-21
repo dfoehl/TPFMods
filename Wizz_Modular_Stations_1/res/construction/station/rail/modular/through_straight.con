@@ -1,0 +1,38 @@
+local modularStationUtil = require("wizz/modularStationUtil")
+
+function data () 
+	
+	
+	return { 
+		type = "RAIL_STATION",
+		description = {
+			name = _("Modular train station"),
+			description = _("Modular train station for passengers.")
+		},
+		availability = {
+			yearFrom = 1990
+		},
+		order = 26343 * 10000 + 02 * 100 + 0,
+		soundConfig = {
+			soundSet = { name = "station_passenger_new" }
+		},
+		params = modularStationUtil.makeTrainStationParams(),
+		
+		updateFn = function(params) 
+		
+			config = modularStationUtil.makeConfig(params)
+			
+			config.platformEnds = { "station/train/passenger/1990/platform_double_start.mdl" } --list of .mdls to use for the platforms ends, mirrored on the other side
+			config.platformStairs = { "station/train/passenger/1990/platform_double_stairs.mdl" } --list of .mdls to use for the platforms stairs, mirrored on the other side
+			config.platformRepeat = { "station/train/passenger/1990/platform_double_repeat.mdl", "station/train/passenger/1990/platform_double_open.mdl" } --list of .mdls to use for the platform, mirrored on the other side
+			config.platformPartLength = 20 --length of the platform parts
+			config.platformTrackDistance = 2.5+1.3 --distance between the center of the platform to the center of the track
+			config.isDoubleTrack = true --if tracks should be generated on both sides of the platform
+			config.cargoType = "person" --or cargo
+			config.stationWidth = 1.46 --x*2.6 (standard track width) | width including tracks and platform
+
+			return modularStationUtil.makeTrainStation(config)
+		end
+	}
+
+end
