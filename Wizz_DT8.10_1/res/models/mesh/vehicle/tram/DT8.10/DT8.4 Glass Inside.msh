@@ -29,7 +29,7 @@ return {
 				},
 			},
 			materials = {
-				"/vehicle/tram/DT8.10_Glass.mtl",
+				"/vehicle/tram/DT8.4_Glass.mtl",
 			},
 		},
 	},

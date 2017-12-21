@@ -45,7 +45,7 @@ return {
 				},
 			},
 			materials = {
-				"/vehicle/tram/DT8.10_Exterior+2.mtl",
+				"/vehicle/tram/DT8.4_Exterior+2.mtl",
 			},
 		},
 	},
